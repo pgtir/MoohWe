@@ -5,7 +5,7 @@ import CardItem from './CardItem'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronRight, faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-function Mainview({list, page, setPage, heading, setSearchKey, setIsSearchPage}) {
+function Mainview({list, page, setPage, heading, setSearchKey}) {
     function backpager() {
         if(page > 1) 
         setPage(--page)
@@ -14,7 +14,6 @@ function Mainview({list, page, setPage, heading, setSearchKey, setIsSearchPage})
     <section className=" mainview flex-fill px-4   py-3">
     <Topbar
      setSearchKey = {setSearchKey}
-    //  setIsSearchPage = {setIsSearchPage}
     />
     <section className='showcase-area  py-4'>
     <div className='head '>
@@ -30,6 +29,7 @@ function Mainview({list, page, setPage, heading, setSearchKey, setIsSearchPage})
          {   
              list && list.map((item) => <CardItem 
              itemProp = {item}
+             key = {item.id}
               />)
          }
      </article>

@@ -4,18 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
-function Topbar({ setSearchKey, setIsSearchPage }) {
+function Topbar({setSearchKey}) {
   const [searchText, setSearchText] = useState("");
-  function handleSearch() {
+  function handleSearch(e) {
+    e.preventDefault();
     console.log("there");
     setSearchKey(searchText);
   }
-  // }
+  
   return (
     <section className="top-bar">
       <div className="search-bar py-2 px-3 shadow-sm">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
         <form onSubmit={handleSearch}>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
           <input
             type="search"
             placeholder="Start typing to search..."
@@ -24,7 +25,7 @@ function Topbar({ setSearchKey, setIsSearchPage }) {
           />
         </form>
       </div>
-      {searchText}
+      
       <div className="right-top">
         <div className="bookmarks">
           <FontAwesomeIcon icon={faBookmark} className="star-icon me-2" />
