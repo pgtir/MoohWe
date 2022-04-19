@@ -23,8 +23,6 @@ function Mainview({list, page, setPage, heading, setSearchKey}) {
      <FontAwesomeIcon onClick={() => setPage(++page)} icon={faCircleChevronRight} className="right-chevron shadow-sm" />
     </div>
     </div>
-     
-
      <article className='card-items'>
          {   
              list && list.map((item) => <CardItem 

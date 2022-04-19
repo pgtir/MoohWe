@@ -1,14 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 function Topbar({setSearchKey}) {
   const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
   function handleSearch(e) {
     e.preventDefault();
-    console.log("there");
+    navigate(`/search/${searchText}`)
     setSearchKey(searchText);
   }
   
@@ -29,7 +31,7 @@ function Topbar({setSearchKey}) {
       <div className="right-top">
         <div className="bookmarks">
           <FontAwesomeIcon icon={faBookmark} className="star-icon me-2" />
-          Bookmarks fg
+          Bookmarks
         </div>
         <section className="mode">
           <span className="theme-name">Light Mode</span>

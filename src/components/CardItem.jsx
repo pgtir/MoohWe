@@ -1,10 +1,12 @@
 import React from "react";
 
 function CardItem({itemProp}) {
+  const unavailable = "https://www.movienewz.com/img/films/poster-holder.jpg";
+  const image = "https://image.tmdb.org/t/p/w500/";
   return (
       <article className="card-item shadow-sm">
         <div className="card-image">
-        <img src={`https://image.tmdb.org/t/p/w500/${ itemProp && itemProp.poster_path}`} alt="djrioeuo"/>
+        <img src={itemProp.poster_path == null ? unavailable : `${image}${ itemProp.poster_path}`} alt={`${itemProp.title} Poster`}/>
         </div>
         <div className="card-info p-1 px-2">
          <div className="title text-center">{itemProp.title}</div>
