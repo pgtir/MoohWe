@@ -2,6 +2,7 @@ import React from 'react'
 import Home from './components/Home';
 import Popular from './components/Popular';
 import TopRated from './components/TopRated';
+import DetailsPage from './components/DetailsPage';
 import Upcoming from './components/Upcoming';
 import SearchResults from './components/SearchResults';
 import CategoriesPage from './components/CategoriesPage';
@@ -17,6 +18,7 @@ function App () {
         <Route exact path='/upcoming' element={ <Upcoming/> }></Route>
         <Route exact path='/search/:query' element={ <SearchResults/> }></Route>
         <Route exact path='/:genre' element={ <CategoriesPage/> }></Route>
+        <Route exact path='/movie-details/:linkType/:id' element={ <DetailsPage/> }></Route>
       </Routes>
     </Router>
     );

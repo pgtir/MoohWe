@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
+
 
 function CardItem({itemProp}) {
   const unavailable = "https://www.movienewz.com/img/films/poster-holder.jpg";
@@ -10,7 +13,9 @@ function CardItem({itemProp}) {
         </div>
         <div className="card-info p-1 px-2">
          <div className="title text-center">{itemProp.title}</div>
-         <div className="votes text-center">Votes : {itemProp.vote_count}</div>
+         <div className="votes text-center">Rating : {itemProp.vote_average}/10
+         {/* <FontAwesomeIcon icon={faStar} /> */}
+         </div>
         </div>
       </article>
   );
